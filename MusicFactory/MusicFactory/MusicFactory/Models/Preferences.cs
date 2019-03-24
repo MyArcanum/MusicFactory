@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MusicFactory.Views;
+using System;
 
 namespace MusicFactory
 {

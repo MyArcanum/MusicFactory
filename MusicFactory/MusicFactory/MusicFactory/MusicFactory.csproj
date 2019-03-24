@@ -31,7 +31,55 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Audio\Rock\bd1.wav" />
+    <None Remove="Audio\Rock\bd2.wav" />
+    <None Remove="Audio\Rock\clap.wav" />
+    <None Remove="Audio\Rock\hh1.wav" />
+    <None Remove="Audio\Rock\hh2.wav" />
+    <None Remove="Audio\Rock\sd1.wav" />
+    <None Remove="Audio\Rock\sd2.wav" />
+    <None Remove="Audio\Rock\shake.wav" />
+    <None Remove="Audio\Rock\tt1.wav" />
+    <None Remove="Audio\Techno\bd1.wav" />
+    <None Remove="Audio\Techno\bd2.wav" />
+    <None Remove="Audio\Techno\clap.wav" />
+    <None Remove="Audio\Techno\hh1.wav" />
+    <None Remove="Audio\Techno\hh2.wav" />
+    <None Remove="Audio\Techno\sd1.wav" />
+    <None Remove="Audio\Techno\sd2.wav" />
+    <None Remove="Audio\Techno\shake.wav" />
+    <None Remove="Audio\Techno\tt1.wav" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Audio\Rock\bd1.wav" />
+    <EmbeddedResource Include="Audio\Rock\bd2.wav" />
+    <EmbeddedResource Include="Audio\Rock\clap.wav" />
+    <EmbeddedResource Include="Audio\Rock\hh1.wav" />
+    <EmbeddedResource Include="Audio\Rock\hh2.wav" />
+    <EmbeddedResource Include="Audio\Rock\sd1.wav" />
+    <EmbeddedResource Include="Audio\Rock\sd2.wav" />
+    <EmbeddedResource Include="Audio\Rock\shake.wav" />
+    <EmbeddedResource Include="Audio\Rock\tt1.wav" />
+    <EmbeddedResource Include="Audio\Techno\bd1.wav" />
+    <EmbeddedResource Include="Audio\Techno\bd2.wav" />
+    <EmbeddedResource Include="Audio\Techno\clap.wav" />
+    <EmbeddedResource Include="Audio\Techno\hh1.wav" />
+    <EmbeddedResource Include="Audio\Techno\hh2.wav" />
+    <EmbeddedResource Include="Audio\Techno\sd1.wav" />
+    <EmbeddedResource Include="Audio\Techno\sd2.wav" />
+    <EmbeddedResource Include="Audio\Techno\shake.wav" />
+    <EmbeddedResource Include="Audio\Techno\tt1.wav" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Xam.Plugin.SimpleAudioPlayer" Version="1.3.0" />
     <PackageReference Include="Xamarin.Forms" Version="3.6.0.264807" />  
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\PianoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

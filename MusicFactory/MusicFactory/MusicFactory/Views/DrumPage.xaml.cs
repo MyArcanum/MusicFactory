@@ -165,28 +165,27 @@ namespace MusicFactory.Views
 
             var folder = (index == 1) ? "Rock" : "Techno";
 
-            try
-            {
 
-                players[(int)DrumType.Bass1].Load(GetStreamFromFile($"Audio.{folder}.bd1.wav"));
-                players[(int)DrumType.Bass2].Load(GetStreamFromFile($"Audio.{folder}.bd2.wav"));
-                players[(int)DrumType.Clap].Load(GetStreamFromFile($"Audio.{folder}.clap.wav"));
-                players[(int)DrumType.HiHat1].Load(GetStreamFromFile($"Audio.{folder}.hh1.wav"));
-                players[(int)DrumType.HiHat2].Load(GetStreamFromFile($"Audio.{folder}.hh2.wav"));
-                players[(int)DrumType.Shake].Load(GetStreamFromFile($"Audio.{folder}.shake.wav"));
-                players[(int)DrumType.Snare1].Load(GetStreamFromFile($"Audio.{folder}.sd1.wav"));
-                players[(int)DrumType.Snare2].Load(GetStreamFromFile($"Audio.{folder}.sd2.wav"));
-                players[(int)DrumType.TomTom].Load(GetStreamFromFile($"Audio.{folder}.tt1.wav"));
-            }
-            catch (Exception e)
-            {
+            players[(int)DrumType.Bass1].Load(GetStreamFromFile($"Audio.{folder}.bd1.wav"));
+            players[(int)DrumType.Bass2].Load(GetStreamFromFile($"Audio.{folder}.bd2.wav"));
+            players[(int)DrumType.Clap].Load(GetStreamFromFile($"Audio.{folder}.clap.wav"));
+            players[(int)DrumType.HiHat1].Load(GetStreamFromFile($"Audio.{folder}.hh1.wav"));
+            players[(int)DrumType.HiHat2].Load(GetStreamFromFile($"Audio.{folder}.hh2.wav"));
+            players[(int)DrumType.Shake].Load(GetStreamFromFile($"Audio.{folder}.shake.wav"));
+            players[(int)DrumType.Snare1].Load(GetStreamFromFile($"Audio.{folder}.sd1.wav"));
+            players[(int)DrumType.Snare2].Load(GetStreamFromFile($"Audio.{folder}.sd2.wav"));
+            players[(int)DrumType.TomTom].Load(GetStreamFromFile($"Audio.{folder}.tt1.wav"));
 
-            }
         }
       
         Stream GetStreamFromFile(string filename)
         {
-            var assembly = typeof(App).GetTypeInfo().Assembly;
+            //var assembly = typeof(App).GetTypeInfo().Assembly;
+            var assembly = this.GetType().Assembly;
+
+            var names = this.GetType().Assembly.GetManifestResourceNames();
+
+
             var stream = assembly.GetManifestResourceStream("MusicFactory." + filename);
 
             return stream;
