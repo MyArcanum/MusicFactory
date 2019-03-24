@@ -32,6 +32,9 @@ namespace MusicFactory.Views
                     case (int)MenuItemType.Drums:
                         MenuPages.Add(id, new NavigationPage(new DrumPage()));
                         break;
+                    case (int)MenuItemType.Piano:
+                        MenuPages.Add(id, new NavigationPage(new PianoPage()));
+                        break;
                     case (int)MenuItemType.About:
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));
                         break;
