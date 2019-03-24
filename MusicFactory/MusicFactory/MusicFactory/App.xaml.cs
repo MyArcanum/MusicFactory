@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using MusicFactory.Views;
+using Utilities;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace MusicFactory
@@ -30,6 +31,14 @@ namespace MusicFactory
         protected override void OnResume()
         {
             // Handle when your app resumes
+        }
+
+        public static void UpdateThemeColors(ColorScheme scheme)
+        {
+            Current.Resources["mainColor"] = XFUtilities.GetColorFromInt(scheme.MainColor);
+            Current.Resources["highlightColor"] = XFUtilities.GetColorFromInt(scheme.HighlightColor);
+            Current.Resources["buttonColor"] = XFUtilities.GetColorFromInt(scheme.ButtonColor);
+            Current.Resources["backgroundColor"] = XFUtilities.GetColorFromInt(scheme.BackgroundColor);
         }
     }
 }

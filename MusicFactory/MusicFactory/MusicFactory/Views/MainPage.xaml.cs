@@ -17,7 +17,7 @@ namespace MusicFactory.Views
 
             MasterBehavior = MasterBehavior.Popover;
 
-            MenuPages.Add((int)MenuItemType.Browse, (NavigationPage)Detail);
+            //MenuPages.Add((int)MenuItemType.Drums, (NavigationPage)Detail);
         }
 
         public async Task NavigateFromMenu(int id)
@@ -26,8 +26,11 @@ namespace MusicFactory.Views
             {
                 switch (id)
                 {
-                    case (int)MenuItemType.Browse:
-                        MenuPages.Add(id, new NavigationPage(new ItemsPage()));
+                    //case (int)MenuItemType.Browse:
+                    //    MenuPages.Add(id, new NavigationPage(new ItemsPage()));
+                    //    break;
+                    case (int)MenuItemType.Drums:
+                        MenuPages.Add(id, new NavigationPage(new DrumPage()));
                         break;
                     case (int)MenuItemType.About:
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));

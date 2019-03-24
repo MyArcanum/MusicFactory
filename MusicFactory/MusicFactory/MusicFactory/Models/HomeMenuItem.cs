@@ -6,7 +6,9 @@ namespace MusicFactory.Models
 {
     public enum MenuItemType
     {
-        Browse,
+        //Browse,
+        Drums,
+        Piano,
         About
     }
     public class HomeMenuItem

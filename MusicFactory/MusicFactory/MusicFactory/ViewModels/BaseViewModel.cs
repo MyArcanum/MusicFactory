@@ -6,13 +6,13 @@ using System.Runtime.CompilerServices;
 using Xamarin.Forms;
 
 using MusicFactory.Models;
-using MusicFactory.Services;
+//using MusicFactory.Services;
 
 namespace MusicFactory.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>() ?? new MockDataStore();
+        //public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>() ?? new MockDataStore();
 
         bool isBusy = false;
         public bool IsBusy
