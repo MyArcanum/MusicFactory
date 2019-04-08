@@ -10,6 +10,23 @@ using Xamarin.Forms.Xaml;
 
 namespace MusicFactory.Views
 {
+
+    public enum Keys
+    {
+        C,
+        Cd,
+        D,
+        Dd,
+        E,
+        F,
+        Fd,
+        G,
+        Gd,
+        A,
+        Ad,
+        B
+    }
+
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PianoPage : ContentPage
     {
@@ -84,6 +101,11 @@ namespace MusicFactory.Views
         foreach (var bk in BlackKeys)
             BlackKeyboard.Children.Add(bk);
             */
+
+        public void PlayTone()
+        {
+            DependencyService.Get<IFrequencyPlayer>().Play(200, 200);
+        }
     }
 
 
