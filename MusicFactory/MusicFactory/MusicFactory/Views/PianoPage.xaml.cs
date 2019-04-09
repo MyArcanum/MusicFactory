@@ -10,20 +10,23 @@ using Xamarin.Forms.Xaml;
 
 namespace MusicFactory.Views
 {
-
+    /// <summary>
+    /// Note representations of piano keys. Firstly there go 5 black keys (with 'd' char that means 'dies') for convenience in next algorithms.
+    /// Then there go white keys.
+    /// </summary>
     public enum Keys
     {
-        C,
-        Cd,
-        D,
+        Cd = 0,
         Dd,
+        Fd,
+        Gd,
+        Ad,
+        C,
+        D,
         E,
         F,
-        Fd,
         G,
-        Gd,
         A,
-        Ad,
         B
     }
 
@@ -40,7 +43,7 @@ namespace MusicFactory.Views
         {
             InitializeComponent();
 
-            SizeChanged += delegate { DrawKeyboard(); };
+            SizeChanged += (s, a) => DrawKeyboard();
         }
 
         private void DrawKeyboard()
@@ -51,13 +54,13 @@ namespace MusicFactory.Views
             var relativeLen = Width / 42;
 
             // math rule for black keys in section
-            var BlackRule = new Dictionary<int, Size>
+            var BlackRule = new Dictionary<int, int>
             {
-                {0, new Size{Width = 6 } },
-                {1, new Size{Width = 0 } },
-                {2, new Size{Width = 6 } },
-                {3, new Size{Width = 0 } },
-                {4, new Size{Width = 0 } }
+                {0, 6 },
+                {1, 0 },
+                {2, 6 },
+                {3, 0 },
+                {4, 0 }
             };
 
             // relative size for white key. Same as values from BlackRule
@@ -69,15 +72,20 @@ namespace MusicFactory.Views
             // 12 keys in one section
             var section = 12;
 
-            foreach (WhiteKey wk in WhiteKeyboard.Children)
-            {
-                wk.WidthRequest = relativeLen * 6;
+            int i = 0;
+            foreach(BlackKey bk in BlackKeyboard.Children)
+            { 
+                bk.Clicked += (s, a) => PlayTone((Keys)i);
+                bk.WidthRequest = relativeLen * 4;
+                bk.Margin = new Thickness(BlackRule[i % section] * relativeLen, 0, 0, PageSize.Height * 0.4);
+                i++;
             }
 
-            for (var i = 0; i < BlackKeyboard.Children.Count; i++)
+            foreach (WhiteKey wk in WhiteKeyboard.Children)
             {
-                BlackKeyboard.Children[i].WidthRequest = relativeLen * 4;
-                BlackKeyboard.Children[i].Margin = new Thickness(BlackRule[i % section].Width * relativeLen, 0, 0, PageSize.Height * 0.4);
+                wk.Clicked += (s, a) => PlayTone((Keys)i);
+                wk.WidthRequest = relativeLen * 6;
+                i++;
             }
         }
 
@@ -102,7 +110,7 @@ namespace MusicFactory.Views
             BlackKeyboard.Children.Add(bk);
             */
 
-        public void PlayTone()
+        public void PlayTone(Keys key)
         {
             DependencyService.Get<IFrequencyPlayer>().Play(200, 200);
         }
