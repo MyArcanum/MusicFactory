@@ -6,6 +6,8 @@ namespace MusicFactory.Models
 {
     public interface IFrequencyPlayer
     {
-        void Play(int frequency, int duration);
+        void Init(Dictionary<Keys, float> frequencies);
+
+        void Play(Keys key);
     }
 }

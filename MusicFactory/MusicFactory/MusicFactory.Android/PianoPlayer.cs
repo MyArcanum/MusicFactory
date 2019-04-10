@@ -12,15 +12,34 @@ using Android.Widget;
 
 using Xamarin.Forms;
 using MusicFactory.Models;
+using Android.Media;
+using System.Threading.Tasks;
 
 [assembly: Dependency(typeof(MusicFactory.Droid.PianoPlayer))]
 namespace MusicFactory.Droid
 {
+    /// <summary>
+    /// https://stackoverflow.com/questions/9106276/android-how-to-generate-a-frequency
+    /// </summary>
     public class PianoPlayer : IFrequencyPlayer
     {
-        public void Play(int frequency, int duration)
+       
+        private Dictionary<Keys, float> Frequencies;
+        
+        public Dictionary<Keys,ToneMaker> TM = new Dictionary<Keys, ToneMaker>();
+
+        public void Init(Dictionary<Keys, float> frequencies)
         {
-            //var tg = new ToneGenerator
+            Frequencies = frequencies;
+            foreach (var k in frequencies.Keys)
+            {
+                TM.Add(k, new ToneMaker(frequencies[k]));
+            }
+        }
+
+        public void Play(Keys key)
+        {
+            TM[key].Play();
         }
     }
 }

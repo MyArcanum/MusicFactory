@@ -10,26 +10,6 @@ using Xamarin.Forms.Xaml;
 
 namespace MusicFactory.Views
 {
-    /// <summary>
-    /// Note representations of piano keys. Firstly there go 5 black keys (with 'd' char that means 'dies') for convenience in next algorithms.
-    /// Then there go white keys.
-    /// </summary>
-    public enum Keys
-    {
-        Cd = 0,
-        Dd,
-        Fd,
-        Gd,
-        Ad,
-        C,
-        D,
-        E,
-        F,
-        G,
-        A,
-        B
-    }
-
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PianoPage : ContentPage
     {
@@ -43,6 +23,10 @@ namespace MusicFactory.Views
         {
             InitializeComponent();
 
+            var sf = new SectionFrequency(4);
+
+            DependencyService.Get<IFrequencyPlayer>().Init(sf.Frequencies);
+
             SizeChanged += (s, a) => DrawKeyboard();
         }
 
@@ -53,7 +37,7 @@ namespace MusicFactory.Views
 
             var relativeLen = Width / 42;
 
-            // math rule for black keys in section
+            // math rule for black keys in section. Value is left margin
             var BlackRule = new Dictionary<int, int>
             {
                 {0, 6 },
@@ -67,53 +51,31 @@ namespace MusicFactory.Views
             //var WhiteRelativeSize = new System.Drawing.Size { Width = 6 };
 
             BlackKeyboard.Spacing = relativeLen * 2;
-            BlackKeyboard.Padding = new Thickness(relativeLen * -2, 0, 0, 0);
+            BlackKeyboard.Padding = new Thickness(relativeLen * -2, 0, 0, PageSize.Height * 0.4);
 
             // 12 keys in one section
             var section = 12;
 
             int i = 0;
+
             foreach(BlackKey bk in BlackKeyboard.Children)
-            { 
-                bk.Clicked += (s, a) => PlayTone((Keys)i);
+            {
+                var note = (Keys)i;
+                bk.Clicked += (s, a) => Task.Run(() => { DependencyService.Get<IFrequencyPlayer>().Play(note); });
                 bk.WidthRequest = relativeLen * 4;
-                bk.Margin = new Thickness(BlackRule[i % section] * relativeLen, 0, 0, PageSize.Height * 0.4);
+                bk.Margin = new Thickness(BlackRule[i % section] * relativeLen, 0, 0,0);
                 i++;
             }
 
             foreach (WhiteKey wk in WhiteKeyboard.Children)
             {
-                wk.Clicked += (s, a) => PlayTone((Keys)i);
+                var note = (Keys)i;
+                wk.Clicked += (s, a) => Task.Run(() => { DependencyService.Get<IFrequencyPlayer>().Play(note); });
                 wk.WidthRequest = relativeLen * 6;
                 i++;
             }
         }
-
-        /*
-        for (var i = 1; i < 13; i++)
-        {
-            if (BlackRule.Keys.Contains(i))
-            {
-                var bk = new BlackKey() { RelativeIndex = i, WidthRequest = relativeLen * 4 };
-                bk.Margin = new Thickness(BlackRule[i % section].Width * relativeLen, 0, 0, PageSize.Height * 0.4);
-                BlackKeys.Add(bk);
-            }
-            else
-                WhiteKeys.Add(new WhiteKey() { RelativeIndex = i, WidthRequest = relativeLen * 6, VerticalOptions = LayoutOptions.FillAndExpand });
-        }
-
-
-        foreach (var wk in WhiteKeys)
-            WhiteKeyboard.Children.Add(wk);
-
-        foreach (var bk in BlackKeys)
-            BlackKeyboard.Children.Add(bk);
-            */
-
-        public void PlayTone(Keys key)
-        {
-            DependencyService.Get<IFrequencyPlayer>().Play(200, 200);
-        }
+        
     }
 
 
