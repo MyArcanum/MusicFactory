@@ -66,7 +66,7 @@ namespace MusicFactory.Views
             foreach(BlackKey bk in BlackKeyboard.Children)
             {
                 var note = (Keys)i;
-                bk.Clicked += (s, a) => Task.Run(() => { FP.Play(note); });
+                bk.Pressed += (s, a) => /*Task.Run(() => {*/ FP.Play(note);
                 bk.WidthRequest = relativeLen * 4;
                 bk.Margin = new Thickness(BlackRule[i % section] * relativeLen, 0, 0,0);
                 i++;
@@ -75,7 +75,7 @@ namespace MusicFactory.Views
             foreach (WhiteKey wk in WhiteKeyboard.Children)
             {
                 var note = (Keys)i;
-                wk.Clicked += (s, a) => Task.Run(() => { FP.Play(note); });
+                wk.Pressed += (s, a) => /*Task.Run(() => { */FP.Play(note);
                 wk.WidthRequest = relativeLen * 6;
                 i++;
             }

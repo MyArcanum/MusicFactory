@@ -38,12 +38,18 @@ namespace MusicFactory.Droid
             sample = new double[numSamples];
             generatedSnd = new byte[2 * numSamples];
 
-            GenTone();
-            WriteSound();
+            
+        }
+        
+        private void Clear()
+        {
+            sample = new double[numSamples];
+            generatedSnd = new byte[2 * numSamples];
         }
 
         private void GenTone()
         {
+            Clear();
             // fill out the array
             for (int i = 0; i < numSamples; ++i)
             {
@@ -65,16 +71,15 @@ namespace MusicFactory.Droid
 
         private void WriteSound()
         {
-            var audioTrack = new AudioTrack(Stream.Music, sampleRate, ChannelOut.Mono, Android.Media.Encoding.Pcm16bit, numSamples, AudioTrackMode.Stream);
-            audioTrack.Write(generatedSnd, 0, generatedSnd.Length);
-            Track = audioTrack;
+            Track = new AudioTrack(Stream.Music, sampleRate, ChannelOut.Mono, Android.Media.Encoding.Pcm16bit, numSamples, AudioTrackMode.Stream);
+            Track.Write(generatedSnd, 0, generatedSnd.Length);
         }
 
         public void Play()
         {
-            Track.Play();
             GenTone();
             WriteSound();
+            Track.Play();
         }
     }
 }
