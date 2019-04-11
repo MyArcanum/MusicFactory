@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:MusicFactory.Models"
+             x:Class="MusicFactory.Views.PianoPage">
+    <ContentPage.Content>
+
+
+        <Grid x:Name="MainKeyboard" BackgroundColor="Gray" VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand">
+            <StackLayout x:Name="WhiteKeyboard"  Orientation="Horizontal" Spacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <models:WhiteKey VerticalOptions="FillAndExpand"/>
+                <models:WhiteKey VerticalOptions="FillAndExpand"/>
+                <models:WhiteKey VerticalOptions="FillAndExpand"/>
+                <models:WhiteKey VerticalOptions="FillAndExpand"/>
+                <models:WhiteKey VerticalOptions="FillAndExpand"/>
+                <models:WhiteKey VerticalOptions="FillAndExpand"/>
+                <models:WhiteKey VerticalOptions="FillAndExpand"/>
+            </StackLayout>
+            <StackLayout x:Name="BlackKeyboard" Orientation="Horizontal" Spacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+                <models:BlackKey VerticalOptions="FillAndExpand" />
+                <models:BlackKey VerticalOptions="FillAndExpand" />
+                <models:BlackKey VerticalOptions="FillAndExpand" />
+                <models:BlackKey VerticalOptions="FillAndExpand" />
+                <models:BlackKey VerticalOptions="FillAndExpand" />
+            </StackLayout>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

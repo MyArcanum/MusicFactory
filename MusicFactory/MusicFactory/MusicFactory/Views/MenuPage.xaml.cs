@@ -19,6 +19,7 @@ namespace MusicFactory.Views
             menuItems = new List<HomeMenuItem>
             {
                 new HomeMenuItem {Id = MenuItemType.Drums, Title="Drums" },
+                new HomeMenuItem {Id = MenuItemType.Piano, Title="Piano" },
                 new HomeMenuItem {Id = MenuItemType.About, Title="About" }
             };
 
