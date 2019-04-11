@@ -39,7 +39,6 @@ namespace MusicFactory.Droid
         public void Play(Keys key)
         {
             TM[key].Play();
-            TM[key] = new ToneMaker(Frequencies[key]);
         }
     }
 }

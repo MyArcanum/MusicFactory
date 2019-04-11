@@ -35,6 +35,7 @@ namespace MusicFactory.Views
 
         private void DrawKeyboard()
         {
+            InitializeComponent();
             MainKeyboard.HeightRequest = Height * 0.8;
             BlackKeyboard.HeightRequest = MainKeyboard.Height * 0.6;
 

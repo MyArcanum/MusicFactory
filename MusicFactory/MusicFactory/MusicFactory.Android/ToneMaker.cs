@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using System.Threading;
 using Android.App;
 using Android.Content;
 using Android.Media;
@@ -27,7 +27,7 @@ namespace MusicFactory.Droid
         private byte[] generatedSnd;
 
         private AudioTrack Track;
-
+    
         public ToneMaker(float f)
         {
             freq = f;
@@ -38,11 +38,19 @@ namespace MusicFactory.Droid
             sample = new double[numSamples];
             generatedSnd = new byte[2 * numSamples];
 
-            
+
+            GenTone();
+            WriteSound();
         }
-        
+
         private void Clear()
         {
+            duration = 0.7f; //sec
+            sampleRate = 8000;
+            numSamples = (int)(duration * sampleRate);
+            sample = new double[numSamples];
+            generatedSnd = new byte[2 * numSamples];
+
             sample = new double[numSamples];
             generatedSnd = new byte[2 * numSamples];
         }
@@ -71,12 +79,16 @@ namespace MusicFactory.Droid
 
         private void WriteSound()
         {
-            Track = new AudioTrack(Stream.Music, sampleRate, ChannelOut.Mono, Android.Media.Encoding.Pcm16bit, numSamples, AudioTrackMode.Stream);
+            Track = new AudioTrack(Stream.Music, sampleRate, ChannelOut.Mono, Android.Media.Encoding.Pcm16bit, numSamples, AudioTrackMode.Static);
             Track.Write(generatedSnd, 0, generatedSnd.Length);
+            //Track.SetNotificationMarkerPosition(generatedSnd.Length);
+            //Track.SetPlaybackPositionUpdateListener(Track.li)
         }
-
+        
         public void Play()
         {
+            //Track.Flush();
+            Track.Release();
             GenTone();
             WriteSound();
             Track.Play();
