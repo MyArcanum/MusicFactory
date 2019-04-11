@@ -19,13 +19,16 @@ namespace MusicFactory.Views
 
         public Size PageSize { get; }
 
+        IFrequencyPlayer FP;
+
         public PianoPage()
         {
             InitializeComponent();
-
+            
             var sf = new SectionFrequency(4);
-
-            DependencyService.Get<IFrequencyPlayer>().Init(sf.Frequencies);
+            
+            FP = DependencyService.Get<IFrequencyPlayer>();
+            FP.Init(sf.Frequencies);
 
             SizeChanged += (s, a) => DrawKeyboard();
         }
@@ -33,6 +36,8 @@ namespace MusicFactory.Views
         private void DrawKeyboard()
         {
             MainKeyboard.HeightRequest = Height * 0.8;
+            BlackKeyboard.HeightRequest = MainKeyboard.Height * 0.6;
+
             var PageSize = new Size() { Height = this.Height, Width = this.Width };
 
             var relativeLen = Width / 42;
@@ -51,7 +56,7 @@ namespace MusicFactory.Views
             //var WhiteRelativeSize = new System.Drawing.Size { Width = 6 };
 
             BlackKeyboard.Spacing = relativeLen * 2;
-            BlackKeyboard.Padding = new Thickness(relativeLen * -2, 0, 0, PageSize.Height * 0.4);
+            BlackKeyboard.Margin = new Thickness(relativeLen * -2, 0, 0, 0);
 
             // 12 keys in one section
             var section = 12;
@@ -61,7 +66,7 @@ namespace MusicFactory.Views
             foreach(BlackKey bk in BlackKeyboard.Children)
             {
                 var note = (Keys)i;
-                bk.Clicked += (s, a) => Task.Run(() => { DependencyService.Get<IFrequencyPlayer>().Play(note); });
+                bk.Clicked += (s, a) => Task.Run(() => { FP.Play(note); });
                 bk.WidthRequest = relativeLen * 4;
                 bk.Margin = new Thickness(BlackRule[i % section] * relativeLen, 0, 0,0);
                 i++;
@@ -70,7 +75,7 @@ namespace MusicFactory.Views
             foreach (WhiteKey wk in WhiteKeyboard.Children)
             {
                 var note = (Keys)i;
-                wk.Clicked += (s, a) => Task.Run(() => { DependencyService.Get<IFrequencyPlayer>().Play(note); });
+                wk.Clicked += (s, a) => Task.Run(() => { FP.Play(note); });
                 wk.WidthRequest = relativeLen * 6;
                 i++;
             }

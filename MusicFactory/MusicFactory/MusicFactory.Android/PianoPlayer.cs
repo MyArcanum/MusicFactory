@@ -23,7 +23,6 @@ namespace MusicFactory.Droid
     /// </summary>
     public class PianoPlayer : IFrequencyPlayer
     {
-       
         private Dictionary<Keys, float> Frequencies;
         
         public Dictionary<Keys,ToneMaker> TM = new Dictionary<Keys, ToneMaker>();

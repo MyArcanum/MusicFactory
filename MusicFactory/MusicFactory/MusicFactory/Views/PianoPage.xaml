@@ -16,7 +16,7 @@
                 <models:WhiteKey VerticalOptions="FillAndExpand"/>
                 <models:WhiteKey VerticalOptions="FillAndExpand"/>
             </StackLayout>
-            <StackLayout x:Name="BlackKeyboard" Orientation="Horizontal" Spacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout x:Name="BlackKeyboard" Orientation="Horizontal" Spacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
                 <models:BlackKey VerticalOptions="FillAndExpand" />
                 <models:BlackKey VerticalOptions="FillAndExpand" />
                 <models:BlackKey VerticalOptions="FillAndExpand" />
