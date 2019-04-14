@@ -70,7 +70,7 @@ namespace MusicFactory.Droid
             foreach (double dVal in sample)
             {
                 // scale to maximum amplitude
-                short val = (short)((dVal * 32767));
+                short val = (short)(dVal * 32767);
                 // in 16 bit wav PCM, first byte is the low order byte
                 generatedSnd[idx++] = (byte)(val & 0x00ff);
                 generatedSnd[idx++] = (byte)((val & 0xff00) >> 8);
@@ -81,8 +81,6 @@ namespace MusicFactory.Droid
         {
             Track = new AudioTrack(Stream.Music, sampleRate, ChannelOut.Mono, Android.Media.Encoding.Pcm16bit, numSamples, AudioTrackMode.Static);
             Track.Write(generatedSnd, 0, generatedSnd.Length);
-            //Track.SetNotificationMarkerPosition(generatedSnd.Length);
-            //Track.SetPlaybackPositionUpdateListener(Track.li)
         }
         
         public void Play()

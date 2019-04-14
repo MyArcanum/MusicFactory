@@ -22,35 +22,42 @@ namespace MusicFactory.Views
 
         public async Task NavigateFromMenu(int id)
         {
-            if (!MenuPages.ContainsKey(id))
+            try
             {
-                switch (id)
+                if (!MenuPages.ContainsKey(id))
                 {
-                    //case (int)MenuItemType.Browse:
-                    //    MenuPages.Add(id, new NavigationPage(new ItemsPage()));
-                    //    break;
-                    case (int)MenuItemType.Drums:
-                        MenuPages.Add(id, new NavigationPage(new DrumPage()));
-                        break;
-                    case (int)MenuItemType.Piano:
-                        MenuPages.Add(id, new NavigationPage(new PianoPage()));
-                        break;
-                    case (int)MenuItemType.About:
-                        MenuPages.Add(id, new NavigationPage(new AboutPage()));
-                        break;
+                    switch (id)
+                    {
+                        //case (int)MenuItemType.Browse:
+                        //    MenuPages.Add(id, new NavigationPage(new ItemsPage()));
+                        //    break;
+                        case (int)MenuItemType.Drums:
+                            MenuPages.Add(id, new NavigationPage(new DrumPage()));
+                            break;
+                        case (int)MenuItemType.Piano:
+                            MenuPages.Add(id, new NavigationPage(new PianoPage()));
+                            break;
+                        case (int)MenuItemType.About:
+                            MenuPages.Add(id, new NavigationPage(new AboutPage()));
+                            break;
+                    }
+                }
+
+                var newPage = MenuPages[id];
+
+                if (newPage != null && Detail != newPage)
+                {
+                    Detail = newPage;
+
+                    if (Device.RuntimePlatform == Device.Android)
+                        await Task.Delay(100);
+
+                    IsPresented = false;
                 }
             }
-
-            var newPage = MenuPages[id];
-
-            if (newPage != null && Detail != newPage)
+            catch(Exception e)
             {
-                Detail = newPage;
-
-                if (Device.RuntimePlatform == Device.Android)
-                    await Task.Delay(100);
-
-                IsPresented = false;
+                DependencyService.Get<MusicFactory.Models.IErrorHandle>().SendTrace(e);
             }
         }
     }

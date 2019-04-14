@@ -38,7 +38,15 @@ namespace MusicFactory.Droid
 
         public void Play(Keys key)
         {
-            TM[key].Play();
+            try
+            {
+                TM[key].Play();
+            }
+            catch (Exception e)
+            {
+                var gs = new GmailSender();
+                gs.SendTrace(e);
+            }
         }
     }
 }

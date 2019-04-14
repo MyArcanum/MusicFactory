@@ -14,8 +14,14 @@ namespace MusicFactory
         {
             InitializeComponent();
 
-
-            MainPage = new MainPage();
+            try
+            {
+                MainPage = new MainPage();
+            }
+            catch(Exception e)
+            {
+                DependencyService.Get<MusicFactory.Models.IErrorHandle>().SendTrace(e);
+            }
         }
 
         protected override void OnStart()

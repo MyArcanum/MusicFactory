@@ -21,11 +21,6 @@ namespace MusicFactory.Models
             BorderWidth = 1;
             BorderColor = Color.Gray;
         }
-
-        public void Play()
-        {
-
-        }
     }
 
     public class WhiteKey : PianoKey
