@@ -87,11 +87,20 @@ namespace MusicFactory.Droid
         
         public void Play()
         {
-            //Track.Flush();
-            Track.Release();
-            GenTone();
-            WriteSound();
-            Track.Play();
+            try
+            {
+                //Track.Flush();
+                Track.Release();
+                GenTone();
+                WriteSound();
+                Track.Play();
+            }
+            catch (Exception)
+            {
+                Track.Dispose();
+                GenTone();
+                WriteSound();
+            }
         }
     }
 }
