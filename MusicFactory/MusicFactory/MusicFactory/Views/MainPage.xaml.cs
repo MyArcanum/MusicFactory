@@ -40,8 +40,17 @@ namespace MusicFactory.Views
                         case (int)MenuItemType.About:
                             MenuPages.Add(id, new NavigationPage(new AboutPage()));
                             break;
+                        case (int)MenuItemType.Metronom:
+                            DependencyService.Get<IControlBridge>().ToggleMetronom(out int freq);
+                            PianoPage.MetronomFreq = freq;
+                            break;
+                            //case (int)MenuItemType.Record:
+                            //    DependencyService.Get<IControlBridge>().OpenRecorder();
+                            //    break;
                     }
                 }
+
+                if (id == (int)MenuItemType.Metronom) return;
 
                 var newPage = MenuPages[id];
 

@@ -9,6 +9,7 @@ namespace MusicFactory.Models
         //Browse,
         Drums,
         Piano,
+        Metronom,
         About
     }
     public class HomeMenuItem

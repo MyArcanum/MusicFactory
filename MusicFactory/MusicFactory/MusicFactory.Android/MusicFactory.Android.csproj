@@ -60,7 +60,10 @@
     <Compile Include="ButtonDownRenderer.cs" />
     <Compile Include="GmailSender.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="Metronom.cs" />
+    <Compile Include="MetronomLouncher.cs" />
     <Compile Include="PianoPlayer.cs" />
+    <Compile Include="ControlBridge.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ToneMaker.cs" />
@@ -100,6 +103,16 @@
       <Project>{40EE2FB8-4644-4B80-B0E2-917AAF1AC274}</Project>
       <Name>MusicFactory</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\MetronomLouncher.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Metronom.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

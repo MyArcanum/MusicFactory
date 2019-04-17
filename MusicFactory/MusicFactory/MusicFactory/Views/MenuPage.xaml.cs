@@ -20,6 +20,7 @@ namespace MusicFactory.Views
             {
                 new HomeMenuItem {Id = MenuItemType.Drums, Title="Drums" },
                 new HomeMenuItem {Id = MenuItemType.Piano, Title="Piano" },
+                new HomeMenuItem {Id = MenuItemType.Metronom, Title="Metronom" },
                 new HomeMenuItem {Id = MenuItemType.About, Title="About" }
             };
 

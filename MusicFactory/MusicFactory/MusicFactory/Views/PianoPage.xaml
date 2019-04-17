@@ -4,26 +4,29 @@
              xmlns:models="clr-namespace:MusicFactory.Models"
              x:Class="MusicFactory.Views.PianoPage">
     <ContentPage.Content>
+        <StackLayout>
 
+            <Button x:Name="TheMetronom" Text="" HeightRequest="20" WidthRequest="20"></Button>
 
-        <Grid x:Name="MainKeyboard" BackgroundColor="Gray" VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand">
-            <StackLayout x:Name="WhiteKeyboard"  Orientation="Horizontal" Spacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                <models:WhiteKey VerticalOptions="FillAndExpand"/>
-                <models:WhiteKey VerticalOptions="FillAndExpand"/>
-                <models:WhiteKey VerticalOptions="FillAndExpand"/>
-                <models:WhiteKey VerticalOptions="FillAndExpand"/>
-                <models:WhiteKey VerticalOptions="FillAndExpand"/>
-                <models:WhiteKey VerticalOptions="FillAndExpand"/>
-                <models:WhiteKey VerticalOptions="FillAndExpand"/>
-            </StackLayout>
-            <StackLayout x:Name="BlackKeyboard" Orientation="Horizontal" Spacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
-                <models:BlackKey VerticalOptions="FillAndExpand" />
-                <models:BlackKey VerticalOptions="FillAndExpand" />
-                <models:BlackKey VerticalOptions="FillAndExpand" />
-                <models:BlackKey VerticalOptions="FillAndExpand" />
-                <models:BlackKey VerticalOptions="FillAndExpand" />
-            </StackLayout>
+            <Grid x:Name="MainKeyboard" BackgroundColor="Gray" VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand">
+                <StackLayout x:Name="WhiteKeyboard"  Orientation="Horizontal" Spacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <models:WhiteKey VerticalOptions="FillAndExpand"/>
+                    <models:WhiteKey VerticalOptions="FillAndExpand"/>
+                    <models:WhiteKey VerticalOptions="FillAndExpand"/>
+                    <models:WhiteKey VerticalOptions="FillAndExpand"/>
+                    <models:WhiteKey VerticalOptions="FillAndExpand"/>
+                    <models:WhiteKey VerticalOptions="FillAndExpand"/>
+                    <models:WhiteKey VerticalOptions="FillAndExpand"/>
+                </StackLayout>
+                <StackLayout x:Name="BlackKeyboard" Orientation="Horizontal" Spacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+                    <models:BlackKey VerticalOptions="FillAndExpand" />
+                    <models:BlackKey VerticalOptions="FillAndExpand" />
+                    <models:BlackKey VerticalOptions="FillAndExpand" />
+                    <models:BlackKey VerticalOptions="FillAndExpand" />
+                    <models:BlackKey VerticalOptions="FillAndExpand" />
+                </StackLayout>
 
-        </Grid>
+            </Grid>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Timers;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,6 +13,8 @@ namespace MusicFactory.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PianoPage : ContentPage
     {
+        public static int MetronomFreq;
+
         public List<ButtonDown> WhiteKeys { get; set; }
 
         public List<ButtonDown> BlackKeys { get; set; }
@@ -20,6 +22,10 @@ namespace MusicFactory.Views
         public Size PageSize { get; }
 
         IFrequencyPlayer FP;
+
+        private bool isMetronomOn = false;
+
+        private Timer timer;
 
         public PianoPage()
         {
@@ -31,6 +37,30 @@ namespace MusicFactory.Views
             FP.Init(sf.Frequencies);
 
             SizeChanged += (s, a) => DrawKeyboard();
+
+            timer = new Timer();
+
+            timer.Elapsed += (s, e) =>
+            {
+                if (TheMetronom.BackgroundColor != Color.White)
+                    TheMetronom.BackgroundColor = Color.Red;
+                else TheMetronom.BackgroundColor = Color.White;
+            };
+
+
+            TheMetronom.Clicked += (s, e) =>
+            {
+                if (isMetronomOn)
+                {
+                    isMetronomOn = !isMetronomOn;
+                    timer.Stop();
+                }
+                if (PianoPage.MetronomFreq != 0)
+                {
+                    timer.Interval = 1000 / (MetronomFreq / 60);
+                    timer.Start();
+                }
+            };
         }
 
         private void DrawKeyboard()

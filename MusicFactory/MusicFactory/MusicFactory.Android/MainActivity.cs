@@ -15,6 +15,8 @@ namespace MusicFactory.Droid
     {
         public static MainActivity Current;
 
+        public int MetronomFrequency { get; set; }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             TabLayoutResource = Resource.Layout.Tabbar;
