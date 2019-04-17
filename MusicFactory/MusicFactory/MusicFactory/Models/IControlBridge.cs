@@ -4,8 +4,10 @@ using System.Text;
 
 namespace MusicFactory.Models
 {
-    public interface IErrorHandle
+    public interface IControlBridge
     {
         void SendTrace(Exception e);
+
+        void Share();
     }
 }

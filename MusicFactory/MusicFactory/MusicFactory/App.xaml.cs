@@ -20,7 +20,7 @@ namespace MusicFactory
             }
             catch(Exception e)
             {
-                DependencyService.Get<MusicFactory.Models.IErrorHandle>().SendTrace(e);
+                DependencyService.Get<MusicFactory.Models.IControlBridge>().SendTrace(e);
             }
         }
 

@@ -40,8 +40,14 @@ namespace MusicFactory.Views
                         case (int)MenuItemType.About:
                             MenuPages.Add(id, new NavigationPage(new AboutPage()));
                             break;
+                        case (int)MenuItemType.Share:
+                            DependencyService.Get<IControlBridge>().Share();
+                            break;
                     }
                 }
+
+                if (id == (int)MenuItemType.Share)
+                    return;
 
                 var newPage = MenuPages[id];
 
@@ -57,7 +63,7 @@ namespace MusicFactory.Views
             }
             catch(Exception e)
             {
-                DependencyService.Get<MusicFactory.Models.IErrorHandle>().SendTrace(e);
+                DependencyService.Get<MusicFactory.Models.IControlBridge>().SendTrace(e);
             }
         }
     }
