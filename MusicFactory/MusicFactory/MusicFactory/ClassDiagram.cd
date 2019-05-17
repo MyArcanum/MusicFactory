@@ -1,2 +1,188 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram /> 
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="MusicFactory.ColorSchemes">
+    <Position X="11.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Models\ColorSchemes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicFactory.ColorScheme">
+    <Position X="11.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAARAAAAAAAAAAAACAAAQACAAAAAAAAAAkAAAAAAA=</HashCode>
+      <FileName>Models\ColorSchemes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicFactory.ImageResourceConverter" BaseTypeListCollapsed="true">
+    <Position X="13.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ImageResourceConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MusicFactory.Note">
+    <Position X="11.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAAAACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Note.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicFactory.Preferences">
+    <Position X="13.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAggAQAAAAAAAAAAAAAAAABAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Models\Preferences.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicFactory.ColorSchemePage">
+    <Position X="8.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\ColorSchemePage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicFactory.App">
+    <Position X="8.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAgAEAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicFactory.Models.ButtonDown">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABAAEAAAAEAAAAAAAAEAAA=</HashCode>
+      <FileName>Models\ButtonDown.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicFactory.Models.HomeMenuItem">
+    <Position X="13.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\HomeMenuItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicFactory.Models.PianoKey">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAIAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\PianoKey.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicFactory.Models.WhiteKey">
+    <Position X="2.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\PianoKey.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicFactory.Models.BlackKey">
+    <Position X="5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\PianoKey.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicFactory.Models.SectionFrequency">
+    <Position X="11.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Models\SectionFrequency.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicFactory.ViewModels.AboutViewModel">
+    <Position X="5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>ViewModels\AboutViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicFactory.ViewModels.BaseViewModel">
+    <Position X="2.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAEAAIEAAAABAgAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\BaseViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MusicFactory.Views.AboutPage">
+    <Position X="7" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\AboutPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicFactory.Views.DrumPage">
+    <Position X="8.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAIAAAAAAAAAAggAAAAAEAAUKgAAAMQAAAA=</HashCode>
+      <FileName>Views\DrumPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicFactory.Views.MainPage">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAACA=</HashCode>
+      <FileName>Views\MainPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicFactory.Views.MenuPage">
+    <Position X="7" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Views\MenuPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicFactory.Views.PianoPage">
+    <Position X="7" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAABAEAAAAAE=</HashCode>
+      <FileName>Views\PianoPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="MusicFactory.Models.IControlBridge">
+    <Position X="15.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\IControlBridge.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MusicFactory.Models.IFrequencyPlayer">
+    <Position X="15.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAACAAAAAAA=</HashCode>
+      <FileName>Models\IFrequencyPlayer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="MusicFactory.ColorSchemeType">
+    <Position X="15.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAGAEAAAAAAABAABAAABAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Models\ColorSchemes.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MusicFactory.Models.MenuItemType">
+    <Position X="17.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAQAABAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\HomeMenuItem.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MusicFactory.Models.Keys">
+    <Position X="17.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>wAsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAvgEAAAA=</HashCode>
+      <FileName>Models\KeysEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MusicFactory.Views.DrumType">
+    <Position X="17.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAABAAAAAAEAAAAAABAAAAAIAQAAAg=</HashCode>
+      <FileName>Views\DrumPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
